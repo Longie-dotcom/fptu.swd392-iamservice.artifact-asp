@@ -104,6 +104,36 @@
           "Port": 5010
         }
       ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Auth/{everything}",
+      "UpstreamPathTemplate": "/enterprise/auth/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": ""
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-enterprisems",
+          "Port": 5020
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Enterprises/{everything}",
+      "UpstreamPathTemplate": "/enterprise/enterprise/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-enterprisems",
+          "Port": 5020
+        }
+      ]
     }
   ]
 }
