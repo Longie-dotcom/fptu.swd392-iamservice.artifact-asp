@@ -1,0 +1,109 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Users/{everything}",
+      "UpstreamPathTemplate": "/iam/user/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-iamms",
+          "Port": 5000
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Roles/{everything}",
+      "UpstreamPathTemplate": "/iam/role/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-iamms",
+          "Port": 5000
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Auth/{everything}",
+      "UpstreamPathTemplate": "/iam/auth/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": ""
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-iamms",
+          "Port": 5000
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Privileges/{everything}",
+      "UpstreamPathTemplate": "/iam/privilege/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-iamms",
+          "Port": 5000
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Image/{everything}",
+      "UpstreamPathTemplate": "/media/image/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": ""
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-mediams",
+          "Port": 5300
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Auth/{everything}",
+      "UpstreamPathTemplate": "/citizen/auth/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": ""
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-citizenms",
+          "Port": 5010
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Citizens/{everything}",
+      "UpstreamPathTemplate": "/citizen/citizen/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "swd392-citizenms",
+          "Port": 5010
+        }
+      ]
+    }
+  ]
+}
