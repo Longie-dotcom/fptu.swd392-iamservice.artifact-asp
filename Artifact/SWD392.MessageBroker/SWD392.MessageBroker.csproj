@@ -7,7 +7,7 @@
 
 	  <Authors>LongieDotCom</Authors>
 	  <PackageId>SWD392.MessageBroker</PackageId>
-	  <Version>1.0.0</Version>
+	  <Version>1.0.5</Version>
 	  <Description>Message broker DTOs for SWD392 Back-end project.</Description>
 
 	  <IsPackable>true</IsPackable>

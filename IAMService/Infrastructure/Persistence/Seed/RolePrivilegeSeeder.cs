@@ -44,29 +44,34 @@ namespace Infrastructure.Persistence.Seed
                 ("ReadOnly", "Have right to view read only fields."),
 
                 // IAM service
-                // User Controller
+                // Users Controller
                 ("ViewUser", "Have right to view all user profiles."),
                 ("CreateUser", "Have right to create new users."),
                 ("ModifyUser", "Have right to modify user profiles."),
                 ("DeleteUser", "Have right to delete users."),
                 ("ChangePassword", "Have right to change owned account password"),
-                // Role Controller
+                // Roles Controller
                 ("ViewRole", "Have right to view all roles and privileges."),
                 ("CreateRole", "Have right to create new custom roles."),
                 ("UpdateRole", "Have right to update role privileges."),
                 ("DeleteRole", "Have right to delete custom roles."),
-                // Privilege Controller
+                // Privileges Controller
                 ("ViewPrivilege", "Have right to view all system privileges."),
                 ("CreatePrivilege", "Have right to create new privileges."),
                 ("UpdatePrivilege", "Have right to update existing privileges."),
                 ("DeletePrivilege", "Have right to delete privileges."),
 
                 // Citizen service
-                // Citizen Controller
+                // Citizens Controller
                 ("ViewCitizenArea", "Have right to view citizen area."),
                 ("ViewCitizenProfile", "Have right to view citizen profile."),
                 ("ReportCollection", "Have right to report collection."),
                 ("ReportComplaint", "Have right to report complaint."),
+                ("ViewCollectionReport", "Have right to view all collection report"),
+
+                // Enterprise service
+                // Enterprises Controller
+                ("CreateCollectorProfile", "Have right to create collector profile/account")
             };
 
             foreach (var (name, desc) in privilegeList)
@@ -118,6 +123,10 @@ namespace Infrastructure.Persistence.Seed
                 "ReportCollection",
                 "ReportComplaint"
             );
+
+            AddPrivilegesToRole(RoleKey.ENTERPRISE,
+                "ViewCollectionReport",
+                "CreateCollectorProfile");
 
             await context.RolePrivileges.AddRangeAsync(rolePrivilegesToInsert);
             await context.SaveChangesAsync();
